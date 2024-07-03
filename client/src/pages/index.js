@@ -1,5 +1,3 @@
-// pages/index.js
-
 import React from 'react';
 
 const Home = () => {
@@ -9,7 +7,8 @@ const Home = () => {
         display: 'flex',
         justifyContent: 'centre',
         alignItems: 'centre',
-        height: '100vh'
+        height: '100vh',
+        backgroundColor: 'pink'
       }}
     >
       <h1>Welcome to Crochet Compass</h1>

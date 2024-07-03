@@ -8,6 +8,7 @@ const About = () => {
                 justifyContent: "centre",
                 alignItems: "centre",
                 height: "100vh",
+                backgroundColor: 'blue'
             }}
         >
             <h1>

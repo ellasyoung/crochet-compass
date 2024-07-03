@@ -8,6 +8,7 @@ const BeginnerPathway = () => {
                 justifyContent: "centre",
                 alignItems: "centre",
                 height: "100vh",
+                backgroundColor: 'green'
             }}
         >
             <h1>Welcome to the Beginner Pathway</h1>
