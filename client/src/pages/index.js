@@ -1,17 +1,10 @@
 import React from 'react';
+import Search from '../components/Search';
 
 const Home = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'centre',
-        alignItems: 'centre',
-        height: '100vh',
-        backgroundColor: 'pink'
-      }}
-    >
-      <h1>Welcome to Crochet Compass</h1>
+    <div>
+      <Search />
     </div>
   );
 };

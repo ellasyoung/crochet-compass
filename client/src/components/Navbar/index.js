@@ -7,7 +7,7 @@ import {
     NavMenu,
     NavLogo
 } from "./NavbarElements";
-import LogoBlack from "./LogoBlack.svg";
+import LogoBlack from "../../assets/LogoBlack.svg";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);

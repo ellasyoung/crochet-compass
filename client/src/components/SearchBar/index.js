@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import {
+  SearchBarCont,
+  SearchInput,
+  SearchButton
+} from "./SearchBarElements";
+import { FaSearch } from 'react-icons/fa';
 
 const SearchBar = () => {
     const [query, setQuery] = useState('');
@@ -16,15 +22,17 @@ const SearchBar = () => {
 
     return (
         <div>
-          <form onSubmit={handleSearch}>
-            <input
+          <SearchBarCont onSubmit={handleSearch}>
+            <SearchInput
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search for patterns..."
             />
-            <button type="submit">Search</button>
-          </form>
+            <SearchButton type="submit">
+              <FaSearch />
+            </SearchButton>
+          </SearchBarCont>
           <div>
             {results.map((pattern) => (
               <div key={pattern._id}>
