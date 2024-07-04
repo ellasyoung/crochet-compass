@@ -21,7 +21,7 @@ const Navbar = () => {
             <Nav>
                 <NavLogo src={LogoBlack} alt="" />
                 <NavTitle to="/" onClick={toggleMenu}>
-                    crochet compass
+                    CrochetCompass
                 </NavTitle>
                 <Bars onClick={toggleMenu} />
                 <NavMenu isOpen={isOpen}>

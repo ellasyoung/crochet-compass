@@ -4,12 +4,13 @@ import styled from "styled-components";
 
 export const Nav = styled.nav`
     background: #ffffff; 
-    height: 85px;
+    height: 120px;
     display: flex;
-    padding-right: 5%;
+    padding-right: 2%;
     z-index: 12;
     position: sticky;
     top: 0;
+    font-size: 18px;
 `;
 
 export const NavLink = styled(Link)`
@@ -18,7 +19,7 @@ export const NavLink = styled(Link)`
     display: flex;
     align-items: center;
     text-decoration: none;
-    padding-right: 50px;
+    padding-right: 70px;
     height: 100%;
     cursor: pointer;
     &.active {
@@ -30,13 +31,16 @@ export const NavLink = styled(Link)`
         text-decoration: underline;
     }
     @media screen and (max-width: 768px) {
-        padding-bottom: 20px;
+        padding-bottom: 25px;
+        margin-left: 102px;
     }
 `;
 
 export const NavTitle = styled(Link)`
     color: #000000;
     font-family: Georgia, serif; 
+    font-size: 24px;
+    font-weight: bold;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -48,6 +52,9 @@ export const NavTitle = styled(Link)`
         font-style: italic;
         text-decoration: underline;
     }
+    @media screen and (max-width: 768px) {
+        font-size: 18px;
+    }
 `;
 
 export const Bars = styled(FaBars)`
@@ -56,7 +63,7 @@ export const Bars = styled(FaBars)`
     @media screen and (max-width: 768px) {
         display: block;
         position: absolute;
-        margin-top: 7px;
+        margin-top: 22px;
         top: 0;
         right: 0;
         transform: translate(-100%, 75%);
@@ -74,24 +81,23 @@ export const NavMenu = styled.div`
         display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
         flex-direction: column;
         align-items: flex-start;
-        width: 81%;
+        width: 100%;
         position: absolute;
         top: 85px;
-        margin-top: -10px;
+        margin-top: 10px;
         left: 0;
-        padding-left: 19%;
         background: #ffffff;
         padding-bottom: 10px;
     }
 `;
 
 export const NavLogo = styled.img`
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     display: flex;
-    margin-top: 18px;
+    margin-top: 30px;
     margin-left: 50px;
     @media screen and (max-width: 768px) {
-        margin-left: 5%;
+        margin-left: 25px;
     }
 `;
