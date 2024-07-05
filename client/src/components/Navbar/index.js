@@ -28,7 +28,7 @@ const Navbar = () => {
                     <NavLink to="/about" onClick={toggleMenu}>
                         about
                     </NavLink>
-                    <NavLink to="/events" onClick={toggleMenu}>
+                    <NavLink to="/beginner-pathway" onClick={toggleMenu}>
                         beginner pathway
                     </NavLink>
                 </NavMenu>

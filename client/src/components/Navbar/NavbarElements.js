@@ -27,7 +27,7 @@ export const NavLink = styled(Link)`
         text-decoration: underline;
     }
     &:hover {
-        color: #fdb0c0;
+        font-style: italic;
         text-decoration: underline;
     }
     @media screen and (max-width: 768px) {
@@ -49,7 +49,7 @@ export const NavTitle = styled(Link)`
     height: 100%;
     cursor: pointer;
     &:hover {
-        color: #fdb0c0;
+        font-style: italic;
         text-decoration: underline;
     }
     @media screen and (max-width: 768px) {
