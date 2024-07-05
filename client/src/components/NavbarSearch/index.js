@@ -5,9 +5,10 @@ import {
     NavTitle,
     Bars,
     NavMenu,
-    NavLogo
+    NavLogo,
 } from "./NavbarSearchElements";
 import LogoBlack from "../../assets/LogoBlack.svg";
+import NavSearchBar from "../NavSearchBar";
 
 const NavbarSearch = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -23,6 +24,7 @@ const NavbarSearch = () => {
                 <NavTitle to="/" onClick={toggleMenu}>
                     CrochetCompass
                 </NavTitle>
+                <NavSearchBar></NavSearchBar>
                 <Bars onClick={toggleMenu} />
                 <NavMenu isOpen={isOpen}>
                     <NavLink to="/about" onClick={toggleMenu}>

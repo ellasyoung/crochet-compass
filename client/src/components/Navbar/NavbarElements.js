@@ -3,7 +3,6 @@ import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Nav = styled.nav`
-    background: #ffffff; 
     height: 120px;
     display: flex;
     padding-right: 2%;
@@ -11,6 +10,7 @@ export const Nav = styled.nav`
     position: sticky;
     top: 0;
     font-size: 18px;
+    align-items: center;
 `;
 
 export const NavLink = styled(Link)`
@@ -75,19 +75,18 @@ export const Bars = styled(FaBars)`
 export const NavMenu = styled.div`
     display: flex;
     align-items: center;
-    margin-right: -24px;
     margin-left: auto;
     @media screen and (max-width: 768px) {
         display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
         flex-direction: column;
         align-items: flex-start;
-        width: 100%;
         position: absolute;
         top: 85px;
         margin-top: 10px;
         left: 0;
         background: #ffffff;
         padding-bottom: 10px;
+        width: 100%;
     }
 `;
 
@@ -95,7 +94,7 @@ export const NavLogo = styled.img`
     width: 60px;
     height: 60px;
     display: flex;
-    margin-top: 30px;
+    
     margin-left: 50px;
     @media screen and (max-width: 768px) {
         margin-left: 25px;
