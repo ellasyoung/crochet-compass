@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import {
   SearchBarCont,
   SearchInput,
@@ -9,39 +10,31 @@ import { FaSearch } from 'react-icons/fa';
 
 const NavSearchBar = () => {
     const [query, setQuery] = useState('');
-    const [results, setResults] = useState([]);
+    const navigate = useNavigate();
+
     const handleSearch = async (e) => {
         e.preventDefault();
         try {
-          const response = await axios.get(`http://localhost:5001/api/patterns?search=${query}`);
-          setResults(response.data);
+            const response = await axios.get(`http://localhost:5001/api/patterns?search=${query}`);
+            navigate('/search-results', { state: { results: response.data } });
         } catch (error) {
-          console.error('Error fetching data:', error);
+            console.error('Error fetching data:', error);
         }
     };
 
     return (
         <div>
-          <SearchBarCont onSubmit={handleSearch}>
-            <SearchInput
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search for patterns..."
-            />
-            <SearchButton type="submit">
-              <FaSearch />
-            </SearchButton>
-          </SearchBarCont>
-          <div>
-            {results.map((pattern) => (
-              <div key={pattern._id}>
-                <h3>{pattern.title}</h3>
-                <p>{pattern.desc}</p>
-                <p>Tags: {pattern.tags.join(', ')}</p>
-              </div>
-            ))}
-          </div>
+            <SearchBarCont onSubmit={handleSearch}>
+                <SearchInput
+                    type="text"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder="Search for patterns..."
+                />
+                <SearchButton type="submit">
+                    <FaSearch />
+                </SearchButton>
+            </SearchBarCont>
         </div>
     );
 };

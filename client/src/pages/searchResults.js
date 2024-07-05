@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import NavbarSearch from "../components/NavbarSearch";
 
 const SearchResults = () => {
     const location = useLocation();
@@ -7,6 +8,7 @@ const SearchResults = () => {
 
     return (
         <div>
+            <NavbarSearch></NavbarSearch>
             <h1>Search Results</h1>
             <div>
                 {results.length > 0 ? (
