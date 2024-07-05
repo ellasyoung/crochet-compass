@@ -8,6 +8,7 @@ import {
 import Home from "./pages";
 import About from "./pages/about";
 import BeginnerPathway from "./pages/beginnerPathway";
+import SearchResults from "./pages/searchResults";
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/beginner-pathway" element={<BeginnerPathway />} />
+                <Route path="/search-results" element={<SearchResults />} />
             </Routes>
         </Router>
     );
