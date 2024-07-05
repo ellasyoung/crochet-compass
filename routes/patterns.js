@@ -11,7 +11,6 @@ router.get('/', async (req, res) => {
         patterns = await Pattern.find({
           $or: [
             { title: { $regex: search, $options: 'i' } },
-            { desc: { $regex: search, $options: 'i' } },
             { tags: { $in: [new RegExp(search, 'i')] } }
           ]
         });

@@ -6,8 +6,8 @@ import {
     Route,
 } from "react-router-dom";
 import Home from "./pages";
-import About from "./pages/about";
-import BeginnerPathway from "./pages/beginnerPathway";
+import About from "./pages/About/index.js";
+import BeginnerPathway from "./pages/BeginnerPathway/index.js";
 import SearchResults from "./pages/SearchResults/index.js";
 
 function App() {
