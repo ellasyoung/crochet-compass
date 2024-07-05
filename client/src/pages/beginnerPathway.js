@@ -1,16 +1,10 @@
 import React from "react";
+import NavbarSearch from "../components/NavbarSearch";
 
 const BeginnerPathway = () => {
     return (
-        <div
-            style={{
-                display: "flex",
-                justifyContent: "centre",
-                alignItems: "centre",
-                height: "100vh",
-                backgroundColor: 'green'
-            }}
-        >
+        <div>   
+            <NavbarSearch></NavbarSearch>
             <h1>Welcome to the Beginner Pathway</h1>
         </div>
     );

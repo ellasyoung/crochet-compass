@@ -1,16 +1,10 @@
 import React from "react";
+import NavbarSearch from "../components/NavbarSearch";
 
 const About = () => {
     return (
-        <div
-            style={{
-                display: "flex",
-                justifyContent: "centre",
-                alignItems: "centre",
-                height: "100vh",
-                backgroundColor: 'blue'
-            }}
-        >
+        <div>
+            <NavbarSearch></NavbarSearch>
             <h1>
                 About Crochet Compass
             </h1>
