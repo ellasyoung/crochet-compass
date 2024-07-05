@@ -8,7 +8,7 @@ import {
 import Home from "./pages";
 import About from "./pages/about";
 import BeginnerPathway from "./pages/beginnerPathway";
-import SearchResults from "./pages/searchResults";
+import SearchResults from "./pages/SearchResults/index.js";
 
 function App() {
     return (

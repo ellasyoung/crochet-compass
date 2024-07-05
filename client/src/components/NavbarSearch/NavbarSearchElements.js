@@ -100,3 +100,17 @@ export const NavLogo = styled.img`
         margin-left: 25px;
     }
 `;
+
+export const Divider = styled.div`
+    height: 1px;
+    background-color: black;
+    width: 100%;
+`;
+
+export const NavCont = styled.div`
+    width: 100%;
+    background-color: white;
+    z-index: 12;
+    position: sticky;
+    top: 0;
+`;

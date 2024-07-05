@@ -6,6 +6,8 @@ import {
     Bars,
     NavMenu,
     NavLogo,
+    Divider,
+    NavCont,
 } from "./NavbarSearchElements";
 import LogoBlack from "../../assets/LogoBlack.svg";
 import NavSearchBar from "../NavSearchBar";
@@ -18,7 +20,7 @@ const NavbarSearch = () => {
     };
 
     return (
-        <>
+        <NavCont>
             <Nav>
                 <NavLogo src={LogoBlack} alt="" />
                 <NavTitle to="/" onClick={toggleMenu}>
@@ -35,7 +37,8 @@ const NavbarSearch = () => {
                     </NavLink>
                 </NavMenu>
             </Nav>
-        </>
+            <Divider></Divider>
+        </NavCont>
     );
 };
 
