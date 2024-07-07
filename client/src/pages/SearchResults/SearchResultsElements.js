@@ -1,8 +1,19 @@
 import styled from "styled-components";
 
+const tagColors = {
+    beginner: '#5CE1E6',
+    stitches : '#00BF63',
+    basics: '#FF66C4',
+    granny_square: '#FF914D',
+    scarf: '#363636',
+    flower: '#FFDE59',
+    puff: '#FF3131',
+};
+
 export const ResultsContainer = styled.div`
     width: 90%;
     margin-left: 5%;
+    margin-top: 25px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -45,5 +56,23 @@ export const ResultBox = styled.div`
     width: 320px;
     &:hover {
         box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
+    }
+    > p {
+        margin-top: 10px;
+    }
+`;
+
+export const Tag = styled.span`
+    display: inline-block;
+    padding: 7px 14px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background-color: ${({ tag }) => tagColors[tag.replace(/\s+/g, '_').toLowerCase()] || '#DEEDF3'};
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;  /* Add transition for smooth scaling */
+    &:hover {
+        transform: scale(1.2);  /* Scale up slightly on hover */
     }
 `;

@@ -8,6 +8,7 @@ import {
     Title,
     ResultsContainer,
     TitleContainter,
+    Tag,
 } from './SearchResultsElements';
 
 const SearchResults = () => {
@@ -31,7 +32,13 @@ const SearchResults = () => {
                                 />
                             </ImageContainer>
                             <h3>{pattern.title}</h3>
-                            <p>Tags: {pattern.tags.join(', ')}</p>
+                            <div>
+                                {pattern.tags.map((tag, index) => (
+                                    <Tag key={index} tag={tag}>
+                                        {tag}
+                                    </Tag>
+                                ))}
+                            </div>
                         </ResultBox>
                     ))
                 ) : (
