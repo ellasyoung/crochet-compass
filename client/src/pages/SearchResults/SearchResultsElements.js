@@ -71,8 +71,4 @@ export const Tag = styled.span`
     background-color: ${({ tag }) => tagColors[tag.replace(/\s+/g, '_').toLowerCase()] || '#DEEDF3'};
     color: black;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-    &:hover {
-        transform: scale(1.2);  /* Scale up slightly on hover */
-    }
 `;

@@ -2,11 +2,12 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import NavbarSearch from "../../components/NavbarSearch";
 import {
-    ImageContainer,
-    Image,
     DetailContainer,
     Title,
     Tag,
+    Video,
+    VideoContainer,
+    TagsContainer,
 } from './PatternDetailElements';
 
 const PatternDetail = () => {
@@ -20,19 +21,24 @@ const PatternDetail = () => {
             <NavbarSearch />
             <DetailContainer>
                 <Title>{pattern.title}</Title>
-                <ImageContainer>
-                    <Image 
-                        src={`https://img.youtube.com/vi/${pattern.ytid}/hqdefault.jpg`} 
-                        alt={`${pattern.title} thumbnail`} 
+                <VideoContainer>
+                    <Video
+                        title={pattern.title}
+                        width="560"
+                        height="315"
+                        src={`http://www.youtube.com/embed/${pattern.ytid}`}
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
                     />
-                </ImageContainer>
-                <div>
+                </VideoContainer>
+                <p>{pattern.desc}</p>
+                <TagsContainer>
                     {pattern.tags.map((tag, index) => (
                         <Tag key={index} tag={tag}>
                             {tag}
                         </Tag>
                     ))}
-                </div>
+                </TagsContainer>
             </DetailContainer>
         </div>
     );
