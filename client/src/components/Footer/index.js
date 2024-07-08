@@ -6,6 +6,7 @@ import {
     HomeLink,
     ExternalLink,
     Icon,
+    Text,
 } from './FooterElements';
 import LogoWhite from '../../assets/LogoWhite.svg';
 import GitHubIcon from '../../assets/GitHubIcon.svg';
@@ -16,7 +17,7 @@ const Footer = () => {
         <FooterCont>
             <Logo src={LogoWhite} alt='Logo' />
             <HomeLink href="/">CrochetCompass</HomeLink>
-            <p>by ellasyoung</p>
+            <Text>by ellasyoung</Text>
             <LinksContainer>
                 <ExternalLink href="https://github.com/ellasyoung" target="_blank" rel="noopener noreferrer">
                     <Icon src={GitHubIcon} alt="GitHub" />

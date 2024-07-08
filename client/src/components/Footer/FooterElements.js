@@ -7,6 +7,9 @@ export const FooterCont = styled.div`
     align-items: center;
     color: white;
     margin-top: 30px;
+    @media screen and (max-width: 768px) {
+        justify-content: center;
+    }
 `;
 
 export const Logo = styled.img`
@@ -14,8 +17,12 @@ export const Logo = styled.img`
     height: 60px;
     margin-left: 50px;
     @media screen and (max-width: 768px) {
-        margin-left: 25px;
+        display: none;
     }
+`;
+
+export const Text = styled.p`
+    display: flex;
 `;
 
 export const LinksContainer = styled.div`
@@ -24,6 +31,10 @@ export const LinksContainer = styled.div`
     margin-left: auto;
     margin-right: 2%;
     padding-right: 70px;
+    @media screen and (max-width: 768px) {
+        margin: 0;
+        padding: 0;
+    }
 `;
 
 export const HomeLink = styled.a`
@@ -35,6 +46,9 @@ export const HomeLink = styled.a`
     &:hover {
         text-decoration: underline;
         font-style: italic;
+    }
+    @media screen and (max-width: 768px) {
+        display: none;
     }
 `;
 
@@ -48,5 +62,8 @@ export const Icon = styled.img`
     margin-left: 32px;
     &:hover {
         opacity: 0.5;
+    }
+    @media screen and (max-width: 768px) {
+        margin: 0 10px 0 10px;
     }
 `;
