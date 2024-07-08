@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import NavbarSearch from "../../components/NavbarSearch";
+import Footer from "../../components/Footer";
 import { 
     ImageContainer,
     Image,
@@ -50,6 +51,7 @@ const SearchResults = () => {
                     <p>No results found.</p>
                 )}
             </ResultsContainer>
+            <Footer></Footer>
         </div>
     );
 };

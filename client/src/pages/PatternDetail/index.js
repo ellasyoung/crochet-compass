@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import NavbarSearch from "../../components/NavbarSearch";
+import Footer from "../../components/Footer";
 import {
     DetailContainer,
     Title,
@@ -40,6 +41,7 @@ const PatternDetail = () => {
                     ))}
                 </TagsContainer>
             </DetailContainer>
+            <Footer></Footer>
         </div>
     );
 };
