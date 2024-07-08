@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import NavbarSearch from "../../components/NavbarSearch";
 import Footer from "../../components/Footer";
+import SearchBar from "../../components/SearchBar"
 import {
     DetailContainer,
     Title,
@@ -9,6 +10,7 @@ import {
     Video,
     VideoContainer,
     TagsContainer,
+    SearchCont,
 } from './PatternDetailElements';
 
 const PatternDetail = () => {
@@ -20,6 +22,9 @@ const PatternDetail = () => {
     return (
         <div>
             <NavbarSearch />
+            <SearchCont>
+                <SearchBar></SearchBar>
+            </SearchCont>
             <DetailContainer>
                 <Title>{pattern.title}</Title>
                 <VideoContainer>

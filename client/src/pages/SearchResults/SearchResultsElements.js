@@ -72,3 +72,14 @@ export const Tag = styled.span`
     color: black;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
+
+export const SearchCont = styled.div`
+    display: none;
+    @media screen and (max-width: 768px) {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+`;

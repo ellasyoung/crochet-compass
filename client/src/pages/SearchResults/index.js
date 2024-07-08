@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import NavbarSearch from "../../components/NavbarSearch";
 import Footer from "../../components/Footer";
+import SearchBar from "../../components/SearchBar"
 import { 
     ImageContainer,
     Image,
@@ -10,6 +11,7 @@ import {
     ResultsContainer,
     TitleContainter,
     Tag,
+    SearchCont,
 } from './SearchResultsElements';
 
 const SearchResults = () => {
@@ -24,6 +26,9 @@ const SearchResults = () => {
     return (
         <div>
             <NavbarSearch />
+            <SearchCont>
+                <SearchBar></SearchBar>
+            </SearchCont>
             <TitleContainter>
                 <Title>Search Results</Title>
             </TitleContainter>

@@ -7,6 +7,22 @@ export const DetailContainer = styled.div`
     margin-right: 20%;
     flex-direction: column;
     align-items: center;
+    @media screen and (max-width: 768px) {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+`;
+
+export const SearchCont = styled.div`
+    display: none;
+    @media screen and (max-width: 768px) {
+        margin-top: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: -20px;
+    }
 `;
 
 export const Title = styled.h1`
