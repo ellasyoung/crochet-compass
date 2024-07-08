@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import NavbarSearch from "../../components/NavbarSearch";
 import { 
     ImageContainer,
@@ -13,7 +13,12 @@ import {
 
 const SearchResults = () => {
     const location = useLocation();
+    const navigate = useNavigate();
     const { results } = location.state || { results: [] };
+
+    const handleResultClick = (pattern) => {
+        navigate(`/pattern-detail/${pattern._id}`, { state: { pattern } });
+    };
 
     return (
         <div>
@@ -24,7 +29,7 @@ const SearchResults = () => {
             <ResultsContainer>
                 {results.length > 0 ? (
                     results.map((pattern) => (
-                        <ResultBox key={pattern._id}>
+                        <ResultBox key={pattern._id} onClick={() => handleResultClick(pattern)}>
                             <ImageContainer>
                                 <Image 
                                     src={`https://img.youtube.com/vi/${pattern.ytid}/hqdefault.jpg`} 
@@ -50,4 +55,3 @@ const SearchResults = () => {
 };
 
 export default SearchResults;
-

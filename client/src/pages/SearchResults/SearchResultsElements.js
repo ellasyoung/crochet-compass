@@ -5,7 +5,6 @@ const tagColors = {
     stitches : '#00BF63',
     basics: '#FF66C4',
     granny_square: '#FF914D',
-    scarf: '#363636',
     flower: '#FFDE59',
     puff: '#FF3131',
 };
@@ -33,8 +32,8 @@ export const Title = styled.h1`
 `;
 
 export const ImageContainer = styled.div`
-    width: 320px;
-    height: 180px;
+    width: 288px;
+    height: 160px;
     border-radius: 14px;
     overflow: hidden;
     position: relative;
@@ -53,7 +52,8 @@ export const ResultBox = styled.div`
     padding: 20px;
     margin: 20px;
     transition: box-shadow 0.3s ease-in-out;
-    width: 320px;
+    width: 288px;
+    cursor: pointer;
     &:hover {
         box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
     }
@@ -71,7 +71,7 @@ export const Tag = styled.span`
     background-color: ${({ tag }) => tagColors[tag.replace(/\s+/g, '_').toLowerCase()] || '#DEEDF3'};
     color: black;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;  /* Add transition for smooth scaling */
+    transition: transform 0.3s ease-in-out;
     &:hover {
         transform: scale(1.2);  /* Scale up slightly on hover */
     }

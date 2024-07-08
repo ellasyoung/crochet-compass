@@ -9,16 +9,17 @@ import Home from "./pages";
 import About from "./pages/About/index.js";
 import BeginnerPathway from "./pages/BeginnerPathway/index.js";
 import SearchResults from "./pages/SearchResults/index.js";
+import PatternDetail from "./pages/PatternDetail/index.js";
 
 function App() {
     return (
         <Router>
-            
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/beginner-pathway" element={<BeginnerPathway />} />
                 <Route path="/search-results" element={<SearchResults />} />
+                <Route path="/pattern-detail/:id" element={<PatternDetail />} />
             </Routes>
         </Router>
     );
