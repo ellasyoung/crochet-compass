@@ -13,6 +13,17 @@ import {
     Tag,
     SearchCont,
 } from './SearchResultsElements';
+import styled from "styled-components";
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
+const ContentWrapper = styled.div`
+  flex: 1;
+`;
 
 const SearchResults = () => {
     const location = useLocation();
@@ -24,40 +35,42 @@ const SearchResults = () => {
     };
 
     return (
-        <div>
+        <Content>
             <NavbarSearch />
-            <SearchCont>
-                <SearchBar></SearchBar>
-            </SearchCont>
-            <TitleContainter>
-                <Title>Search Results</Title>
-            </TitleContainter>
-            <ResultsContainer>
-                {results.length > 0 ? (
-                    results.map((pattern) => (
-                        <ResultBox key={pattern._id} onClick={() => handleResultClick(pattern)}>
-                            <ImageContainer>
-                                <Image 
-                                    src={`https://img.youtube.com/vi/${pattern.ytid}/hqdefault.jpg`} 
-                                    alt={`${pattern.title} thumbnail`} 
-                                />
-                            </ImageContainer>
-                            <h3>{pattern.title}</h3>
-                            <div>
-                                {pattern.tags.map((tag, index) => (
-                                    <Tag key={index} tag={tag}>
-                                        {tag}
-                                    </Tag>
-                                ))}
-                            </div>
-                        </ResultBox>
-                    ))
-                ) : (
-                    <p>No results found.</p>
-                )}
-            </ResultsContainer>
+            <ContentWrapper>
+                <SearchCont>
+                    <SearchBar></SearchBar>
+                </SearchCont>
+                <TitleContainter>
+                    <Title>Search Results</Title>
+                </TitleContainter>
+                <ResultsContainer>
+                    {results.length > 0 ? (
+                        results.map((pattern) => (
+                            <ResultBox key={pattern._id} onClick={() => handleResultClick(pattern)}>
+                                <ImageContainer>
+                                    <Image 
+                                        src={`https://img.youtube.com/vi/${pattern.ytid}/hqdefault.jpg`} 
+                                        alt={`${pattern.title} thumbnail`} 
+                                    />
+                                </ImageContainer>
+                                <h3>{pattern.title}</h3>
+                                <div>
+                                    {pattern.tags.map((tag, index) => (
+                                        <Tag key={index} tag={tag}>
+                                            {tag}
+                                        </Tag>
+                                    ))}
+                                </div>
+                            </ResultBox>
+                        ))
+                    ) : (
+                        <p>No results found.</p>
+                    )}
+                </ResultsContainer>
+            </ContentWrapper>
             <Footer></Footer>
-        </div>
+        </Content>
     );
 };
 

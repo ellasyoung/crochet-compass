@@ -4,17 +4,21 @@ import Footer from "../../components/Footer";
 import {
     Title,
     TitleContainter,
+    Content,
+    ContentWrapper,
 } from './AboutElements';
 
 const About = () => {
     return (
-        <div>
+        <Content>
             <NavbarSearch></NavbarSearch>
-            <TitleContainter>
-                <Title>About CrochetCompass</Title>
-            </TitleContainter>
+            <ContentWrapper>
+                <TitleContainter>
+                    <Title>About CrochetCompass</Title>
+                </TitleContainter>
+            </ContentWrapper>
             <Footer></Footer>
-        </div>
+        </Content>
     );
 };
 

@@ -11,6 +11,9 @@ export const Nav = styled.nav`
     top: 0;
     font-size: 18px;
     align-items: center;
+    @media screen and (max-width: 768px) {
+        background: white;
+    }
 `;
 
 export const NavLink = styled(Link)`

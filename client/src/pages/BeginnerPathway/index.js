@@ -4,17 +4,21 @@ import Footer from "../../components/Footer";
 import {
     Title,
     TitleContainter,
+    Content,
+    ContentWrapper,
 } from './BeginnerPathwayElements';
 
 const BeginnerPathway = () => {
     return (
-        <div>   
+        <Content>   
             <NavbarSearch></NavbarSearch>
-            <TitleContainter>
-                <Title>Beginner Pathway</Title>
-            </TitleContainter>
+            <ContentWrapper>
+                <TitleContainter>
+                    <Title>Beginner Pathway</Title>
+                </TitleContainter>
+            </ContentWrapper>
             <Footer></Footer>
-        </div>
+        </Content>
     );
 };
 
