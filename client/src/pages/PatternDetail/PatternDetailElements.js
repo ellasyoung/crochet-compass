@@ -28,7 +28,7 @@ export const TagsContainer = styled.div`
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start; /* Align tags to the left */
+    justify-content: flex-start;
     margin-bottom: 20px;
     margin-top: 20px;
 `;
