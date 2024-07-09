@@ -23,6 +23,22 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Get all patterns with a specific tag
+router.get('/tags', async (req, res) => {
+  const { tag } = req.query;
+  let patterns;
+  try {
+    if (tag) {
+      patterns = await Pattern.find({ tags: { $regex: new RegExp(tag, 'i') } });
+    } else {
+      patterns = await Pattern.find();
+    }
+    res.json(patterns);
+  } catch (error) {
+    res.status(500).json({ message: 'Server Error' });
+  }
+});
+
 // Get a specific pattern by ytid
 router.get('/:ytid', async (req, res) => {
     try{
