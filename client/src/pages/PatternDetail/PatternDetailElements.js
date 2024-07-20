@@ -25,10 +25,16 @@ export const SearchCont = styled.div`
     }
 `;
 
+export const TCont = styled.div`
+    display: flex;
+    justify-content: left;
+    width: 100%;
+`;
+
 export const Title = styled.h1`
     font-size: 32px;
-    margin-bottom: 20px;
-    margin-top: 50px;
+    margin-bottom: 10px;
+    float: left;
 `;
 
 const tagColors = {
@@ -58,18 +64,19 @@ export const Tag = styled.span`
     background-color: ${({ tag }) => tagColors[tag.replace(/\s+/g, '_').toLowerCase()] || '#DEEDF3'};
     color: black;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.2s ease-in-out;
     cursor: pointer;
     &:hover {
-        transform: scale(1.2);  /* Scale up slightly on hover */
+        transform: scale(1.2); 
     }
 `;
 
 export const VideoContainer = styled.div`
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-    margin-bottom: 20px;
+    padding-top: 56.25%;
+    margin-bottom: 10px;
+    margin-top: 75px;
 `;
 
 export const Video = styled.iframe`
@@ -79,4 +86,9 @@ export const Video = styled.iframe`
     width: 100%;
     height: 100%;
     border: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    &:hover {
+        transform: scale(0.95); 
+    }
 `;

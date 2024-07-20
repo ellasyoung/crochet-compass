@@ -18,6 +18,15 @@ export const ResultsContainer = styled.div`
     justify-content: space-around;
 `;
 
+export const TextCont = styled.div`
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 25px;
+    display: flex;
+    font-size: 18px;
+    margin-bottom: -20px;
+`;
+
 export const TitleContainter = styled.div`
     width: 100%;
     display: flex;

@@ -16,7 +16,7 @@ const NavSearchBar = () => {
         e.preventDefault();
         try {
             const response = await axios.get(`http://localhost:5001/api/patterns?search=${query}`);
-            navigate('/search-results', { state: { results: response.data } });
+            navigate('/search-results', { state: { results: response.data, query: query } });
         } catch (error) {
             console.error('Error fetching data:', error);
         }

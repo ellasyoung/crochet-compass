@@ -1,8 +1,9 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import axios from 'axios';
+import { useLocation, useNavigate } from 'react-router-dom';
 import NavbarSearch from "../../components/NavbarSearch";
 import Footer from "../../components/Footer";
-import SearchBar from "../../components/SearchBar"
+import SearchBar from "../../components/SearchBar";
 import {
     DetailContainer,
     Title,
@@ -11,22 +12,35 @@ import {
     VideoContainer,
     TagsContainer,
     SearchCont,
+    TCont,
 } from './PatternDetailElements';
 
 const PatternDetail = () => {
     const location = useLocation();
     const { pattern } = location.state || { pattern: null };
+
+    const navigate = useNavigate();
+
+    const fetchSearchResults = async (searchQuery) => {
+        try {
+            const response = await axios.get(`http://localhost:5001/api/patterns?search=${searchQuery}`);
+            navigate('/search-results', { state: { results: response.data, query: searchQuery } });
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
     if (!pattern) {
         return <p>No pattern data available.</p>;
     }
+
     return (
         <div>
             <NavbarSearch />
             <SearchCont>
-                <SearchBar></SearchBar>
+                <SearchBar />
             </SearchCont>
             <DetailContainer>
-                <Title>{pattern.title}</Title>
                 <VideoContainer>
                     <Video
                         title={pattern.title}
@@ -37,16 +51,19 @@ const PatternDetail = () => {
                         allowFullScreen
                     />
                 </VideoContainer>
-                <p>{pattern.desc}</p>
+                <TCont>
+                    <Title>{pattern.title}</Title>
+                </TCont>
+                <TCont>{pattern.desc}</TCont>
                 <TagsContainer>
                     {pattern.tags.map((tag, index) => (
-                        <Tag key={index} tag={tag}>
+                        <Tag key={index} tag={tag} onClick={() => { fetchSearchResults(tag); }}>
                             {tag}
                         </Tag>
                     ))}
                 </TagsContainer>
             </DetailContainer>
-            <Footer></Footer>
+            <Footer />
         </div>
     );
 };

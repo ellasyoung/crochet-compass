@@ -29,8 +29,8 @@ const NavbarSearch = () => {
                 <NavSearchBar></NavSearchBar>
                 <Bars onClick={toggleMenu} />
                 <NavMenu isOpen={isOpen}>
-                    <NavLink to="/about" onClick={toggleMenu}>
-                        about
+                    <NavLink to="/explore" onClick={toggleMenu}>
+                        explore
                     </NavLink>
                     <NavLink to="/beginner-pathway" onClick={toggleMenu}>
                         beginner pathway

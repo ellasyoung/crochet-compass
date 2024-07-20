@@ -12,6 +12,7 @@ import {
     TitleContainter,
     Tag,
     SearchCont,
+    TextCont,
 } from './SearchResultsElements';
 import styled from "styled-components";
 
@@ -28,7 +29,7 @@ const ContentWrapper = styled.div`
 const SearchResults = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const { results } = location.state || { results: [] };
+    const { results, query } = location.state || { results: [], query: '' };
 
     const handleResultClick = (pattern) => {
         navigate(`/pattern-detail/${pattern._id}`, { state: { pattern } });
@@ -44,6 +45,9 @@ const SearchResults = () => {
                 <TitleContainter>
                     <Title>Search Results</Title>
                 </TitleContainter>
+                <TextCont>
+                    <p style={{marginLeft: '50px'}}>Search results for "{query}"...</p>
+                </TextCont>
                 <ResultsContainer>
                     {results.length > 0 ? (
                         results.map((pattern) => (
