@@ -7,7 +7,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-    origin: 'https://crochetcompass.web.app' 
+    origin: 'https://crochetcompass.web.app/explore' 
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

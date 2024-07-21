@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCGMgLFhavkWKCJkjp65ll7MnS0MBpJSS8",
+  apiKey: FIREBASE_API_KEY,
   authDomain: "crochetcompass.firebaseapp.com",
   projectId: "crochetcompass",
   storageBucket: "crochetcompass.appspot.com",
