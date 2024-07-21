@@ -20,7 +20,7 @@ app.use(function(req, res, next) {
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.get('/', cors(corsOptions), async (req, res) => {
+app.get('/', async (req, res) => {
     res.json({ message: 'Welcome to the CrochetCompass API'});
 });
 
