@@ -1,6 +1,6 @@
 const functions = require('firebase-functions');
 const express = require('express');
-const cors = require('cors');
+const cors = require('cors')({origin: true});
 require('dotenv').config();
 
 const connectDB = require('./config/db');
