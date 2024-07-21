@@ -3,28 +3,33 @@
 env:
   MONGO_URI: mongodb+srv://ellasyoung:Nps1300845!@crochetcompassv1.4wmpnex.mongodb.net/crochetpatterns?retryWrites=true&w=majority
   
-name: Deploy to Firebase Hosting on merge
+name: Deploy to Firebase on merge
 on:
   push:
     branches:
       - main
 jobs:
-  build_and_deploy1:
+  build_and_deploy_functions:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npm ci
+      - run: npm ci --prefix './functions'
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CROCHETCOMPASS }}
           channelId: live
           projectId: crochetcompass
-  build_and_deploy2:          
+      - run: firebase deploy --only functions
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
+  build_and_deploy_hosting:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npm ci --prefix './client' && npm run build --prefix './client'
+      - run: npm ci --prefix './client'
+      - run: npm run build --prefix './client'
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
