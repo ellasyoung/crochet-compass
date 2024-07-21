@@ -1,18 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const Pattern = require('../models/Pattern');
-const cors = require('cors');
+const cors = require('cors')({origin: true});
 
 // CORS configuration
-const corsOptions = {
-  origin: 'https://crochetcompass.web.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type'],
-  credentials: true
-};
+router.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 // Get all patterns or search patterns
-router.get('/', cors(corsOptions), async (req, res) => {
+router.get('/', async (req, res) => {
     const { search } = req.query;
     let patterns;
     try {
@@ -33,7 +32,7 @@ router.get('/', cors(corsOptions), async (req, res) => {
 });
 
 // Get all patterns with a specific tag
-router.get('/tags', cors(corsOptions), async (req, res) => {
+router.get('/tags', async (req, res) => {
   const { tag } = req.query;
   let patterns;
   try {
@@ -49,7 +48,7 @@ router.get('/tags', cors(corsOptions), async (req, res) => {
 });
 
 // Get a specific pattern by ytid
-router.get('/:ytid', cors(corsOptions), async (req, res) => {
+router.get('/:ytid', async (req, res) => {
     try{
         const pattern = await Pattern.findOne({ ytid: req.params.ytid });
         if (!pattern) {
