@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
     res.json({ message: 'Welcome to the CrochetCompass API'});
 });
 
-const patternsRouter = require('./routes/patterns');
+const patternsRouter = require('./functions/routes/patterns');
 app.use('/api/patterns', patternsRouter);
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));

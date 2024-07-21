@@ -13,8 +13,6 @@ import {
     ResultBox,
     ResultsContainer,
     Tag,
-    SearchCont,
-    TextCont,
 } from './ExploreElements';
 
 const Explore = () => {
@@ -25,7 +23,7 @@ const Explore = () => {
     useEffect(() => {
         const fetchPatterns = async () => {
             try {
-                const response = await axios.get('http://localhost:5001/api/patterns');
+                const response = await axios.get('https://us-central1-crochetcompass.cloudfunctions.net/api/patterns');
                 setPatterns(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
