@@ -10,12 +10,11 @@ connectDB();
 const app = express();
 
 // CORS configuration
-const corsOptions = {
-    origin: 'https://crochetcompass.web.app',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type'],
-    credentials: true
-  };
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 // Body parser middleware
 app.use(express.json());
