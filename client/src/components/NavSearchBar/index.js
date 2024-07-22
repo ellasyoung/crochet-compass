@@ -15,7 +15,7 @@ const NavSearchBar = () => {
     const handleSearch = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.get(`https://us-central1-crochetcompass.cloudfunctions.net/api/patterns?search=${query}`);
+            const response = await axios.get(`https://us-central1-crochetcompass.cloudfunctions.net/app/api/patterns?search=${query}`);
             navigate('/search-results', { state: { results: response.data, query: query } });
         } catch (error) {
             console.error('Error fetching data:', error);

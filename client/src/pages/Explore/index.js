@@ -23,7 +23,7 @@ const Explore = () => {
     useEffect(() => {
         const fetchPatterns = async () => {
             try {
-                const response = await axios.get('https://us-central1-crochetcompass.cloudfunctions.net/api/patterns');
+                const response = await axios.get('https://us-central1-crochetcompass.cloudfunctions.net/app/api/patterns');
                 setPatterns(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);

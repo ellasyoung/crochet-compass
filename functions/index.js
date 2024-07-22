@@ -1,30 +1,37 @@
 const functions = require('firebase-functions');
+const admin = require('firebase-admin');
+
+var serviceAccount = require("./permissions.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://crochetcompass-default-rtdb.firebaseio.com"
+});
+
 const express = require('express');
-const cors = require('cors')({origin: true});
 require('dotenv').config();
-
+const cors = require('cors');
 const connectDB = require('./config/db');
-
-connectDB();
 
 const app = express();
 
-// CORS configuration
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
+connectDB();
+
+app.use(cors( {origin: true} ));
 
 // Body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.get('/', async (req, res) => {
+// Main Route
+app.get('/', (req, res) => {
     res.json({ message: 'Welcome to the CrochetCompass API'});
 });
 
+
+// Route to get patterns
 const patternsRouter = require('./routes/patterns');
 app.use('/api/patterns', patternsRouter);
 
-exports.api = functions.https.onRequest(app);
+// Exports the API to Firebase Cloud Functions
+exports.app = functions.https.onRequest(app);
