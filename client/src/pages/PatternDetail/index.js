@@ -46,7 +46,7 @@ const PatternDetail = () => {
                         title={pattern.title}
                         width="560"
                         height="315"
-                        src={`http://www.youtube.com/embed/${pattern.ytid}`}
+                        src={`https://www.youtube.com/embed/${pattern.ytid}`}
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture "
                         referrerpolicy="no-referrer-when-downgrade"
                         allowFullScreen
