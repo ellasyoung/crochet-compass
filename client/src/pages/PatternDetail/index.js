@@ -23,7 +23,7 @@ const PatternDetail = () => {
 
     const fetchSearchResults = async (searchQuery) => {
         try {
-            const response = await axios.get(`https://us-central1-crochetcompass.cloudfunctions.net/api/patterns?search=${searchQuery}`);
+            const response = await axios.get(`https://us-central1-crochetcompass.cloudfunctions.net/app/api/patterns?search=${searchQuery}`);
             navigate('/search-results', { state: { results: response.data, query: searchQuery } });
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -47,7 +47,8 @@ const PatternDetail = () => {
                         width="560"
                         height="315"
                         src={`http://www.youtube.com/embed/${pattern.ytid}`}
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture "
+                        referrerpolicy="no-referrer-when-downgrade"
                         allowFullScreen
                     />
                 </VideoContainer>
